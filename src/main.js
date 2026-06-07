@@ -1,35 +1,17 @@
-import axios from 'axios';
-import * as render from '/js/render-functions.js';
+import { getImagesByQuery } from './js/pixabay-api.js';
+import * as render from './js/render-functions.js';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('#search-form');
 const loadMoreBtn = document.querySelector('.load-more');
 
-const API_KEY = '56116338-e065c09dde8a76b57de900d0e';
 let query = '';
 let page = 1;
 const perPage = 15;
 
 form.addEventListener('submit', onSearch);
 loadMoreBtn.addEventListener('click', onLoadMore);
-
-async function getImagesByQuery(query, page) {
-  const options = {
-    params: {
-      key: API_KEY,
-      q: query,
-      image_type: 'photo',
-      orientation: 'horizontal',
-      safesearch: true,
-      page: page,
-      per_page: perPage,
-    },
-  };
-
-const response = await axios.get('https://pixabay.com/api/', options);
-  return response.data;
-}
 
 async function onSearch(event) {
   event.preventDefault();
