@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search Images</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+    <title>goit-js-hw-12</title>
+
+   
+    <link rel="stylesheet" href="./css/lightbox.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
     <header class="header">
-        <form class="search-form" id="search-form">
+        <!-- ВИПРАВЛЕНО: додано точний клас form за вимогою ментора -->
+        <form class="form" id="search-form">
             <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..."
                 class="search-input" />
             <button type="submit" class="search-button">Search</button>
@@ -18,7 +22,6 @@
     </header>
 
     <main class="container">
-        
         <ul class="gallery"></ul>
 
         <div class="controls">
@@ -27,7 +30,8 @@
         </div>
     </main>
 
-    <script type="module" src="/main.js"></script>
+   
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>

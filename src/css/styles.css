@@ -28,7 +28,7 @@ ul {
     justify-content: center;
 }
 
-.search-form {
+.form {
     display: flex;
     gap: 8px;
 }
